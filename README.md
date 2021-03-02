@@ -33,58 +33,6 @@ docker run \
   auto-sign-machine:latest
 ```
 
-## 52pojie签到任务
-**实现现52pojie帐号的每日签到任务。**
-
-```sh
-node index.js 52pojie --htVD_2132_auth b22d**********************aNjr --htVD_2132_saltkey Jc***********I
-```
-
-### docker部署
-```sh
-# 构建
-docker build -t auto-sign-machine:latest  -f docker/Dockerfile .
-# 运行
-docker run \
-  --name auto-sign-machine \
-  -d \
-  --label traefik.enable=false \
-  -e enable_52pojie=true \
-  -e htVD_2132_auth=b******************jr \
-  -e htVD_2132_saltkey=Jc************I \
-  auto-sign-machine:latest
-```
-、
-## iqiyi签到任务
-**实现现iqiyi帐号的每日签到任务。**
-详细功能目录如下:
-
-* **普通用户每天自动获取积分**
-* **vip用户每日签到随机成长值及积分**
-* **vip用户每日浏览会员俱乐部+1成长值**
-
-```sh
-node index.js iqiyi --P00001 b********jr --P00PRU 12***24 --QC005 5f******6fe --dfp Jc************I
-```
-
-### docker部署
-```sh
-# 构建
-docker build -t auto-sign-machine:latest  -f docker/Dockerfile .
-# 运行
-docker run \
-  --name auto-sign-machine \
-  -d \
-  --label traefik.enable=false \
-  -e enable_iqiyi=true \
-  -e P00001=b********jr \
-  -e P00PRU=12***24 \
-  -e QC005=5f******6fe \
-  -e dfp=Jc************I \
-  auto-sign-machine:latest
-```
-
-
 、
 ## 联通APP签到任务
 **实现现联通帐号的每日签到任务。**
